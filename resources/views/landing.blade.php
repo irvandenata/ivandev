@@ -4,7 +4,7 @@
 <style>
 </style>
 @section('content')
-  {{-- <div id="about-me"
+  <div id="about-me"
     class="snap-madatory snap-center mx-auto container min-h-screen flex lg:flex-row flex-col  lg:items-center "
     id="about-me">
     <div class="lg:basis-1/2 flex justify-center">
@@ -87,7 +87,7 @@
 
         </div>
     </div>
-  </div> --}}
+  </div>
 
   <div class="snap-madatory snap-center container min-h-screen mx-auto  flex items-center" id="tech-stack">
     <div class="flex w-full">

@@ -99,6 +99,11 @@ Route::get('/clear-cache',function(){
     return "Cache is cleared";
 });
 
+Route::get('/stroage-link', function () {
+    Artisan::call('storage:link');
+    return "storage link created";
+});
+
 Route::get('/generate-sitemap',function(){
     Artisan::call('sitemap:generate');
     return "sitemap-generated";
