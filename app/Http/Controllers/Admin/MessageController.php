@@ -72,7 +72,7 @@ class MessageController extends Controller
             return DataTables::of($items)
                 ->addColumn('action', function ($item) {
                     return '
-                           <a class="btn btn-danger btn-sm"  onclick="deleteItem(' . $item->id . ')"><i class="fas fa-trash text-white"></i></span></a> <a class="btn btn-warning btn-sm" onclick="editItem('.$item->id.')" ><i class="fas fa-pencil text-white    "></i></span></a>';
+                           <a class="btn btn-danger btn-sm"  onclick="deleteItem(' . $item->id . ')"><i class="fas fa-trash text-white"></i></span></a>';
                 })
                 ->removeColumn('id')
                 ->addIndexColumn()

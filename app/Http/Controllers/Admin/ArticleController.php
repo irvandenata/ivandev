@@ -167,7 +167,7 @@ class ArticleController extends Controller
             $item->category_id = $request->category_id;
             $item->save();
             DB::commit();
-            return redirect()->back()->with('success', 'Data has been created');
+            return redirect()->route($this->editLink,$item->id)->with('success', 'Data has been created');
         } catch (Exception $e) {
             DB::rollback();
             return redirect()->back()->with('error', $e->getMessage());

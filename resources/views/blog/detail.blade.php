@@ -32,6 +32,22 @@
     .body>p {
       text-align: justify !important;
     }
+    @media (max-width: 768px) {
+      .body>h1 {
+        font-size: 2.5rem !important;
+      }
+
+      .body>h2 {
+        font-size: 1.5rem !important;
+      }
+
+      .body>h3 {
+        font-size: 1rem !important;
+      }
+      .body>p {
+        font-size: 12px !important
+      }
+    }
   </style>
 @endpush
 @section('content')
@@ -77,15 +93,17 @@
         </ol>
       </nav>
     </div>
-    <div class="w-full mt-5">
+    <div class="w-full mt-5 ">
       <img class="rounded-[1rem] p-1 w-screen max-h-screen object-cover"
         src="{{ $article->image ? '/storage/' . $article->image : 'https://picsum.photos/640/480/?random=1' }}"
         alt="Article" />
     </div>
-    <div class="title mt-10">
-      <h1 class="text-3xl font-bold">{{ $article->title }}</h1>
-      <h2 class="text-lg font-semibold mt-4">{{ $article->category->name }}</h2>
-      <p>{{ $article->created_at }}</p>
+    <div class="title mt-10 sm:mt-5">
+      <h1 class="text-3xl sm:text-lg font-bold">{{ $article->title }}</h1>
+      <h2 class="text-lg sm:text-lg font-semibold mt-4">{{ $article->category->name }}</h2>
+      {{-- name day --}}
+      <p>{{ Carbon\Carbon::parse($article->created_at)->format('l, d F Y')
+       }}</p>
     </div>
     <div class="body mt-10 mb-10">
       {!! $article->body !!}

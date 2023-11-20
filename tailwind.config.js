@@ -7,6 +7,12 @@ module.exports = {
         "./resources/**/*.vue",
     ],
     theme: {
+        screens: {
+            'sm': '370px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+          },
         // fontSize: {
         //     '4xl': '2.25rem',
         //     '3xl': '1.875rem',
@@ -31,8 +37,8 @@ module.exports = {
         },
         container: {
             padding: {
-                lg:'10rem',
-                sm:'2rem',
+                lg:'1rem',
+                sm:'0.2rem',
                 // DEFAULT: '1rem',
             }
         },

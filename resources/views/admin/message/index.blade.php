@@ -26,6 +26,7 @@
           <table id="datatable" style="max-width:100% !important" class="table m-t-30">
             <thead>
               <tr>
+                <th>Action</th>
                 <th>No</th>
                 @foreach ($rows['name'] as $item)
                   <th>{{ $item }}</th>
@@ -73,7 +74,14 @@
         url: child_url,
         type: 'GET',
       },
-      columns: [{
+      columns: [
+      {
+        data:'action',
+        name:'action',
+        orderable: false,
+        searchable: false
+      },
+      {
           data: 'DT_RowIndex',
           orderable: false,
           searchable: false

@@ -17,7 +17,7 @@
     <div class="w-full">
       <form class="static mt-32" action="{{ route('projects.search') }}" action="GET">
         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray">Search</label>
-        <div class="relative">
+        <div class="relative -z-10">
           <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
             <svg class="w-4 h-4 text-gray dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
               fill="none" viewBox="0 0 20 20">
@@ -27,13 +27,13 @@
           </div>
           <input type="text" id="default-search" name="search"
             class="block w-full p-4 ps-10 text-sm text-gray-900 border-2 border-gray  rounded-lg bg-gray-50  focus:border-primary focus:border-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white focus:outline-primary"
-            placeholder="Search Mockups, Logos..." required>
+            placeholder="Search Name, Location ..." required>
           <button type="submit"
             class="text-black absolute end-2.5 bottom-2.5 bg-background hover:bg-blue-800 focus:border-2 focus:border-primary focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 ">Search</button>
         </div>
       </form>
     </div>
-    <div class="grid grid-cols-4 gap-y-10 gap-x-6 mt-10 ">
+    <div class="grid grid-cols-4 sm:grid-cols-1 gap-y-10 gap-x-6 mt-10 ">
       @foreach ($projects as $item)
         <div
           class="max-w-sm bg-background border-2 border-gray rounded-lg hover:border-primary shadow dark:bg-gray-800 dark:border-gray-700 ">
