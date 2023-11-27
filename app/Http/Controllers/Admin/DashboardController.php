@@ -49,8 +49,9 @@ class DashboardController extends Controller
 
         $data['title'] = $this->name;
         $data['breadcrumb'] = $this->name;
-        $today = date('Y-m-d');
-        
+        $year = date('Y');
+        $month = date('m');
+        $data['countView'] = Activity::whereYear('date', $year)->whereMonth('date', $month)->get();
         return view('admin.dashboard', $data);
     }
 

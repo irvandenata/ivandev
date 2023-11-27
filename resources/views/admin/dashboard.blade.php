@@ -116,7 +116,7 @@
       </div>
     </div>
     <!-- Total Revenue -->
-    <div class="col-lg-6 col-12 col-xs-12  mb-4">
+    <div class="col-lg-12 col-12 col-xs-12  mb-4">
       <div class="card">
         <div class="row row-bordered g-0">
           <div class="col-12">
@@ -126,54 +126,6 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-6 col-12 col-xs-12  mb-4">
-      <div class="card">
-        <div class="row row-bordered g-0">
-          <div class="col-12">
-            <h4 class="card-header m-0 me-2 pb-3">Recently Users Active</h4>
-          
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-12 col-xs-12  mb-4">
-      <div class="card">
-        <div class="row row-bordered g-0">
-          <div class="col-12">
-            <h4 class="card-header m-0 me-2 pb-3">Best Player</h4>
-            <div class="mx-4">
-              <select name="" id="category-question2" class="form-control" style="width:200px">
-               
-              </select>
-            </div>
-
-            <div id="best-player" class="my-4">
-              <div class="text-center">No Data</div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-12 col-xs-12  mb-4">
-        <div class="card">
-          <div class="row row-bordered g-0">
-            <div class="col-12">
-              <h4 class="card-header m-0 me-2 pb-3">Leaderboard</h4>
-              <div class="mx-4">
-                <select name="" id="category-question" class="form-control" style="width:200px">
-                 
-                </select>
-              </div>
-
-              <div id="leaderboard" class="my-4">
-                <div class="text-center">No Data</div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
   </div>
 @endsection
 
@@ -199,7 +151,10 @@
           series: [{
               name: '{{ date('F') }}',
               data: [
-                
+                @foreach ($countView as $item)
+                  {{ $item['count_view'] }},
+                @endforeach
+
               ]
             },
 
@@ -259,7 +214,9 @@
           },
           xaxis: {
             categories: [
-              
+                @foreach ($countView as $item)
+                  {{ Carbon\Carbon::parse($item['date'])->format('d') }},
+                @endforeach
             ],
             labels: {
               style: {
@@ -455,100 +412,6 @@
         totalRevenueChart.render();
       }
 
-      const incomeChartEl = document.querySelector('#incomeChart'),
-        incomeChartConfig = {
-          series: [{
-            name: '{{ date('Y') }}',
-            data: []
-          }],
-          chart: {
-            height: 215,
-            parentHeightOffset: 0,
-            parentWidthOffset: 0,
-            toolbar: {
-              show: false
-            },
-            type: 'area'
-          },
-          dataLabels: {
-            enabled: false
-          },
-          stroke: {
-            width: 2,
-            curve: 'smooth'
-          },
-          legend: {
-            show: false
-          },
-          //   markers: {
-          //     size: 6,
-          //     colors: 'transparent',
-          //     strokeColors: 'transparent',
-          //     strokeWidth: 4,
-          //     discrete: [{
-          //       fillColor: config.colors.white,
-          //       seriesIndex: 0,
-          //       dataPointIndex: 3,
-          //       strokeColor: config.colors.primary,
-          //       strokeWidth: 2,
-          //       size: 6,
-          //       radius: 8
-          //     }],
-          //     hover: {
-          //       size: 7
-          //     }
-          //   },
-          colors: [config.colors.primary],
-          fill: {
-            type: 'gradient',
-            gradient: {
-              shade: shadeColor,
-              shadeIntensity: 0.6,
-              opacityFrom: 0.5,
-              opacityTo: 0.25,
-              stops: [0, 95, 100]
-            }
-          },
-          grid: {
-            borderColor: borderColor,
-            strokeDashArray: 3,
-            padding: {
-              top: -20,
-              bottom: -8,
-              left: -10,
-              right: 8
-            }
-          },
-          xaxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-            axisBorder: {
-              show: false
-            },
-            axisTicks: {
-              show: false
-            },
-            labels: {
-              show: true,
-              style: {
-                fontSize: '13px',
-                colors: axisColor
-              }
-            }
-          },
-          yaxis: {
-            labels: {
-              //   show: false
-            },
-            // min: 10,
-            // max: 50,
-            // tickAmount: 4
-          }
-        };
-      if (typeof incomeChartEl !== undefined && incomeChartEl !== null) {
-        const incomeChart = new ApexCharts(incomeChartEl, incomeChartConfig);
-        incomeChart.render();
-      }
-
       // Expenses Mini Chart - Radial Chart
       // --------------------------------------------------------------------
 
@@ -574,7 +437,8 @@
                 html += '<img src="' + item.image_url + '" alt="user" class="rounded-circle" width="50">';
                 html += '</div>';
                 html += '<div class="col-4 my-auto">' + item.name + '</div>';
-                html += '<div class="col-4 my-auto text-end">' + item.score + ' | ' + item.duration + 'S</div>';
+                html += '<div class="col-4 my-auto text-end">' + item.score + ' | ' + item.duration +
+                  'S</div>';
                 html += '</div>';
                 html += '</div>';
                 html += '</div>';
@@ -608,12 +472,12 @@
                 html += '</div>';
                 html += '<div class="col-4 my-auto">' + item.name + '</div>';
                 let category = item.group_category.filter(function(item) {
-                  return item.id ==  ($('#category-question2').val());
+                  return item.id == ($('#category-question2').val());
                 });
 
                 console.log(category)
                 //rounded
-                let total = category[0].correct/category[0].total_question*100;
+                let total = category[0].correct / category[0].total_question * 100;
                 let rounded = Math.round(total);
                 html += '<div class="col-4 my-auto text-end">' + rounded + '%</div>';
                 html += '</div>';

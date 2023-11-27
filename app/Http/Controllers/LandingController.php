@@ -33,14 +33,12 @@ class LandingController extends Controller
         $data['techStack'] = AdditionalInfo::whereHas('type', function ($query) {
             $query->where('name', 'Tech Stack');
         })->get();
-
         $data['workExp'] = AdditionalInfo::whereHas('type', function ($query) {
             $query->where('name', 'Work Experiences');
         })->orderBy('end_date','desc')->get();
         $data['projects'] = Article::whereHas('category', function ($query) {
             $query->where('name', 'Project');
         })->orderBy('created_at','desc')->paginate(4);
-
         return view('landing',$data);
     }
 

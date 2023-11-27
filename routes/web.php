@@ -28,6 +28,20 @@ Route::get('/tos', function () {
     return view('tos', $data);
 });
 
+Route::get('count-view',function(){
+    $countActivity = \App\Models\Activity::where('date',date('Y-m-d'))->first();
+    if($countActivity){
+        $countActivity->count_view = $countActivity->count_view + 1;
+        $countActivity->save();
+    }else{
+        $countActivity = new \App\Models\Activity();
+        $countActivity->count_view = 1;
+        $countActivity->date = date('Y-m-d');
+        $countActivity->save();
+    }
+    return response()->json(['status' => 'success']);
+})->name('count-view');
+
 Route::get('/leaderboard', [App\Http\Controllers\Api\ResultTestController::class, 'getLeaderboard']);
 
 
