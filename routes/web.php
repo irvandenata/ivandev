@@ -28,6 +28,7 @@ Route::get('/tos', function () {
     return view('tos', $data);
 });
 
+
 Route::get('count-view',function(){
     $countActivity = \App\Models\Activity::where('date',date('Y-m-d'))->first();
     if($countActivity){
@@ -126,6 +127,5 @@ Route::get('/generate-sitemap',function(){
 Route::get('/sitemap', [App\Http\Controllers\LandingController::class, 'sitemap'])->name('sitemap');
 
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

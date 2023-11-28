@@ -33,12 +33,12 @@
         </div>
       </form>
     </div>
-    <div class="grid grid-cols-4 sm:grid-cols-1 gap-y-10 gap-x-6 mt-10 ">
+    <div class="grid lg:grid-cols-4 sm:grid-cols-1 gap-y-10 gap-x-6 mt-10 ">
       @foreach ($projects as $item)
         <div
           class="max-w-sm bg-background border-2 border-gray rounded-lg hover:border-primary shadow dark:bg-gray-800 dark:border-gray-700 ">
           <a href="{{ route('blog.show', $item->slug) }}" class="">
-            <img class="rounded-lg p-1" src="https://picsum.photos/640/480/?random=1" alt="Article" />
+            <img class="rounded-lg p-1" src="{{ asset('storage/' . $item->image) }}"zz alt="Article" />
           </a>
           <div class="p-5">
             <a href="{{ route('blog.show', $item->slug) }}" class="">

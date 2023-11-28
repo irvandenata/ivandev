@@ -8,7 +8,7 @@
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>My Name Irvan Denata !</title>
 
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -23,7 +23,7 @@
   @stack('style')
 </head>
 
-<body class="w-screen">
+<body class="w-full">
 
   <div id="spinner" class="w-full h-screen flex justify-center bg-background items-center fixed z-10 top-0 left-0">
     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" class="animate-spin" height="1em"
