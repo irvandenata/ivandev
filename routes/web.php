@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,8 +121,8 @@ Route::get('/stroage-link', function () {
 });
 
 Route::get('/generate-sitemap',function(){
-    Artisan::call('sitemap:generate');
-    return "sitemap-generated";
+  SitemapGenerator::create('https://ivd.my.id')->writeToFile('sitemap.xml');
+  return "sitemap generated";
 });
 
 Route::get('/sitemap', [App\Http\Controllers\LandingController::class, 'sitemap'])->name('sitemap');

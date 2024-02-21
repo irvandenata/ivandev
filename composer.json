@@ -12,6 +12,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.2",
+        "spatie/laravel-sitemap": "^7.0",
         "yajra/laravel-datatables": "^10.1"
     },
     "require-dev": {

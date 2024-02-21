@@ -4,12 +4,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="google-site-verification" content="cBvsZNYqf5FcJu_zi2EgL6bq6DsnnDIR436vavO1Cgo" />
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>My Name Irvan Denata !</title>
-
+  <meta name="description"
+    content="Irvan Denata is a Full Stack Developer, Web Developer, Mobile Developer, and
+        Software Engineer.">
+  <meta name="keywords"
+    content="Irvan Denata, Irvan, Denata, Irvan Denata Blog, Irvan Denata Website, Irvan Denata,Web Developer, Mobile Developer, Software Engineer, Full Stack Developer, Laravel, Vue, Vuejs, Vue.js, Nuxt, Nuxtjs, Nuxt.js, Tailwind, Tailwindcss, Tailwind.css, Tailwind CSS, Tailwind UI, TailwindUI, TailwindUI.com, Tailwind UI.com, Tailwind Components, TailwindComponents, Tailwind Components.com, TailwindComponents.com, Tailwind Starter Kit, TailwindStarterKit, Tailwind Starter Kit.com, TailwindStarterKit.com, Tailwind Templates, TailwindTemplates, Tailwind Templates.com, TailwindTemplates.com, Tailwind Themes, TailwindThemes, Tailwind Themes.com, TailwindThemes.com, Tailwind Admin Template, TailwindAdminTemplate, Tailwind Admin Template.com, TailwindAdminTemplate.com, Tailwind Admin, TailwindAdmin, Tailwind Admin.com, TailwindAdmin.com, Tailwind Dashboard, TailwindDashboard, Tailwind Dashboard.com, TailwindDashboard.com,Layout, Tailwind Layout, TailwindLayout, Tailwind Layout.com, TailwindLayout.com , Laravel Developer, Laravel Developer Indonesia, Laravel Developer Jakarta, Laravel Developer Bandung, Laravel Developer Surabaya, Laravel Developer Semarang, Laravel Developer Yogyakarta, Laravel Developer Bali, Laravel Developer Lombok, Laravel Developer Aceh, Laravel Developer Medan, Laravel Developer Palembang, Laravel Developer Makassar, Laravel Developer Papua, Laravel Developer Maluku, Laravel Developer Kalimantan, Laravel Developer Sulawesi, Laravel Developer Sumatera, Laravel Developer Jawa, Laravel Developer Java, Laravel Developer Borneo, Laravel Developer Indonesia, Laravel Developer Indonesia Jakarta, Laravel Developer Indonesia Bandung, Laravel Developer Indonesia Surabaya, Laravel Developer Indonesia Semarang, Laravel Developer Indonesia Yogyakarta, Laravel Developer Indonesia Bali, Laravel Developer Indonesia Lombok, Laravel Developer Indonesia Aceh, Laravel Developer Indonesia Medan, Laravel Developer Indonesia Palembang, Laravel Developer Indonesia Makassar, Laravel Developer Indonesia Papua, Laravel Developer Indonesia Maluku, Laravel Developer Indonesia Kalimantan, Laravel Developer Indonesia Sulawesi, Laravel Developer Indonesia Sumatera, Laravel Developer Indonesia Jawa, Laravel Developer Indonesia Java, Laravel Developer Indonesia Borneo, Laravel Developer Indonesia">
   <!-- Fonts -->
   <link rel="dns-prefetch" href="//fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">

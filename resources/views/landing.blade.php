@@ -219,7 +219,9 @@
             <div
               class="max-w-sm bg-background border-2 border-gray rounded-lg hover:border-primary shadow dark:bg-gray-800 dark:border-gray-700">
               <a href="{{ route('blog.show', $item->slug) }}" class="">
-                <img class="rounded-lg p-1" src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}">
+                <img class="rounded-lg p-1" style="object-fit: cover;
+                width: 100%;
+                height: 185px;" src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}">
               </a>
               <div class="p-5">
                 <a href="{{ route('blog.show', $item->slug) }}" class="">
